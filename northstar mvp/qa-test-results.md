@@ -151,7 +151,9 @@ Result: PASS
 Test summary 
 
 Total test: 12
+
 Passed: 12
+
 Failed: 0
 
 
