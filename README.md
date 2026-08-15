@@ -1,86 +1,108 @@
-Northstar Retail Support Deflection MVP
+# Northstar Retail Support Deflection MVP
 
-A 1-week industrial simulationprojecr for Northstar Retail Co., focused on reducing repetitive customer support tickets through self-service support.
+A 1-week industry simulation project for **Northstar Retail Co.**, focused on reducing repetitive customer support tickets through self-service support.
 
-Project Overview
+## Project Overview
 
 Northstar's support team receives a high volume of repetitive questions about:
-   ◆ Order status
-   ◆ Stock availability
 
-This MVP provides a simple self-service interface that allows customers to get immediate answers without requiring a support agent for every basic enquiry
+- Order status
+- Stock availability
 
-MVP Goals.
+This MVP provides a simple self-service interface that allows customers to get immediate answers without requiring a support agent for every basic enquiry.
 
-The MVp aims to:
-◆Reduce repetitive support tickets.
-◆Give customers quck answers about their orders.
-◆Allow customers to check products availability.
-◆Provide a clear fallback path when the system cannot resolve a request.
-◆Demonstrate how simple self-service can improve support efficiency.
+## MVP Goals
 
-MVP Features
+The MVP aims to:
 
-Order Status Lookup
+- Reduce repetitive support tickets
+- Give customers quick answers about their orders
+- Allow customers to check product availability
+- Provide a clear fallback path when the system cannot resolve a request
+- Demonstrate how self-service can improve support efficiency
+
+## MVP Features
+
+### 1. Order Status Lookup
+
 Customers can enter an order number and receive the corresponding order status.
 
-Example order numbers include:
-◆#1001
-◆#1002
-◆#1003
-◆#1004
+Example order numbers:
 
-Stock Availability Lookup
+- `#1001`
+- `#1002`
+- `#1003`
+- `#1004`
 
-◇Customers can search for a product by name and receive its availability information.
+### 2. Stock Availability Lookup
 
-◇The MVP supports partial product-name matching where applicable.
+Customers can search for a product by name and receive its availability information.
 
-Fallback & Escalation
+The MVP supports partial product-name matching where applicable.
+
+### 3. Fallback & Escalation
+
 When the system cannot find a matching order or product, it provides a fallback response instead of leaving the customer without guidance.
 
-Technology
+## Technology
 
-◆HTML
-◆CSS
-◆JavaScript
-◆ GitHub
-◆GitHub pages
+- HTML
+- CSS
+- JavaScript
+- GitHub
+- GitHub Pages
 
-Team
+## Team
 
-Role.                       Team Member.
+| Role | Team Member |
+|---|---|
+| Technical Lead | Mark Kamaamia |
+| Product Lead | Mark Ochieng |
+| Customer Experience Lead | Grace Murigi |
+| QA & Testing Lead | Loureen Shillah |
+| Project & Delivery Lead | Maureen Naranoi |
 
-Technical Lead              Mark Kamaamia
-Product Lead.               Mark Ochieng
-Customer Experience Lead.   Grace Murigi
-QA & Testing Lead           Loureen Shillah
-Project & Delivery.         Maureen Naranoi
+## Project Documentation
 
-Project Documentation
+- `product-requirements.md` — MVP problem, requirements, and scope
+- `customer-journey.md` — Customer journey and support experience
+- `delivery-checklist.md` — Delivery and final submission checklist
+- `northstar mvp/` — MVP application files
+- `07_QA_Test_Plan.md` — Testing plan and evidence
 
-The repository contains supporting project documentation, including:
-  ◆product-requirements.md — MVP problem, customer questions and scope
-  ◆customer-journey.md — customer support experience and journey
-  ◆delivery-checklist.md — submission readiness checklist
-  ◆northstar mvp/ — MVP application files and project documentation
+## Testing
 
-  
-Testing
+The MVP includes testing of the two primary support flows:
 
-The order-status and stock-availability flows have been tested as part of the QA process.
+- Order-status lookup
+- Stock-availability lookup
 
 Testing evidence and results are documented in the project's QA documentation.
 
-Live Prototype
+## Live Prototype
 
-Demo: Open the Northstar Support Deflection MVP
+**Demo:**  
+https://markle-art.github.io/northstar-support-deflection-mvp/
 
-Project Status
+## Project Status
 
-MVP status: Ready for final review and submission.
+**MVP status: Ready for final review and submission.**
 
-The project includes the working MVP, team documentation, customer requirements, testing evidence, delivery tracking, and final submission preparation.
+The project includes:
+
+- Working MVP prototype
+- Product requirements
+- Customer journey documentation
+- Testing evidence
+- Delivery checklist
+- GitHub task tracking
+- Final submission preparation
+
+## Project Context
+
+This project was completed as a 1-week industry simulation for **Northstar Retail Co.**
+
+The team worked collaboratively using GitHub for project documentation, task tracking, contribution history, testing evidence, and final delivery.
 
 
 
@@ -90,4 +112,36 @@ The project includes the working MVP, team documentation, customer requirements,
 
 
 
-   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
