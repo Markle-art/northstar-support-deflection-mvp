@@ -2,26 +2,26 @@
 
  Required Deliverables
 
-- [❌️] Working MVP
-- [❌️] Team Charter
-- [❌️] Task Board
-- [✅️ ] QA/testing evidence
-- [✅️ ] Go-live readiness note
-- [✅️ ] Audit trail
-- [ ✅️] Pitch
-- [✅️ ] Final submission files
+- [X] Working MVP
+- [X] Team Charter
+- [X] Task Board
+- [ ] QA/testing evidence
+- [X]Go-live readiness note
+- [ ] Audit trail
+- [ ] Pitch
+- [ ] Final submission files
 
  Final Checks
 
-- [❌️] MVP covers at least 2 ticket categories
-- [✅️ ] Order-status flow tested
-- [ ✅️] Stock-availability flow tested
-- [✅️ ] Known issues documented
-- [✅️ ] Northstar handover requirements documented
-- [✅️ ] Team contributions are traceable
-- [ ✅️] All required files are included
-- [✅️ ] Pitch roles assigned to all 5 team members
-- [✅️ ] Final submission checked before deadline
+- [X] MVP covers at least 2 ticket categories
+- [ ] Order-status flow tested
+- [ ] Stock-availability flow tested
+- [ ] Known issues documented
+- [ ] Northstar handover requirements documented
+- [ ] Team contributions are traceable
+- [ ] All required files are included
+- [ ] Pitch roles assigned to all 5 team members
+- [ ] Final submission checked before deadline
 
  Team
 
