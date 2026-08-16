@@ -22,15 +22,14 @@ Tester: Loureen Shillah (QA & Testing Lead). Fill in **Actual Result** and **Pas
 
 | Bug ID | Related Test ID | Description | Severity | Reported To | Status |
 |---|---|---|---|---|---|
-| | | | | Technical Lead | |
+| None | — | No bugs identified during final QA testing | — | Technical Lead | Closed |
 
-## Test Summary (fill in after T12)
+## Test Summary
 - Total test cases: 12
-- Passed: [fill in]
-- Failed: [fill in]
-- Bugs found and fixed before demo: [fill in]
-- Known unresolved issues (if any, disclose honestly in the Go-Live Readiness Note): [fill in]
-
+- Passed: 12
+- Failed: 0
+- Bugs found and fixed before demo: 0
+- Known unresolved issues: None identified during QA testing
 ## QA Evidence
 
 ### Order-status success — PASS
