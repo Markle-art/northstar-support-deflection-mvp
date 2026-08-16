@@ -30,19 +30,20 @@ Tester: Loureen Shillah (QA & Testing Lead). Fill in **Actual Result** and **Pas
 - Failed: [fill in]
 - Bugs found and fixed before demo: [fill in]
 - Known unresolved issues (if any, disclose honestly in the Go-Live Readiness Note): [fill in]
+
 ## QA Evidence
 
 ### Order-status success
 Tested with order `#1004`. The prototype returned the expected shipped status.
 
-![Order status success](Screenshot_20260816_212643_Chrome.jpg)
+![Order status success](..)
 
 ### Order-status fallback
 Tested with an invalid order ID. The prototype returned a fallback message and directed the customer to a human agent.
 
-![Order status fallback](Screenshot_20260816_212944_Chrome.jpg)
+![Order status fallback](../Screenshot_20260816_212944_Chrome.jpg)
 
 ### Stock-availability success
 Tested product lookup using "Speaker". The prototype returned the expected Bluetooth Speaker availability result.
 
-![Stock availability](Screenshot_20260816_212859_Chrome.jpg)
+![Stock availability success](../northstar mvp/YOUR-STOCK-SCREENSHOT.png)
