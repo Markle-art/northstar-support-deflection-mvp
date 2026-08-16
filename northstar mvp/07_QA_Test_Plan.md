@@ -33,17 +33,17 @@ Tester: Loureen Shillah (QA & Testing Lead). Fill in **Actual Result** and **Pas
 
 ## QA Evidence
 
-### Order-status success
-Tested with order `#1004`. The prototype returned the expected shipped status.
+### Order-status success — PASS
+Tested with order `#1004`. The system returned the expected **Shipped** status.
 
-![Order status success](..qa-evidence/Screenshot_20260816_212643_Chrome.jpg)
+![Order status success](../qa-evidence/Screenshot_20260816_212643_Chrome.jpg)
 
-### Order-status fallback
-Tested with an invalid order ID. The prototype returned a fallback message and directed the customer to a human agent.
+### Order-status fallback — PASS
+Tested with an invalid order `#9999`. The system returned the fallback response and provided an option to escalate to a human agent.
 
-![Order status fallback](..qa-evidence/Screenshot_20260816_212944_Chrome.jpg)
+![Order status fallback](../qa-evidence/Screenshot_20260816_212944_Chrome.jpg)
 
-### Stock-availability success
-Tested product lookup using "Speaker". The prototype returned the expected Bluetooth Speaker availability result.
+### Stock-availability success — PASS
+Tested by searching for `Speaker`. The system returned the **Bluetooth Speaker — In Stock** result.
 
-![Stock availability success](..qa-evidence/Screenshot_20260816_212859_Chrome.jpg)
+![Stock availability](../qa-evidence/Screenshot_20260816_212859_Chrome.jpg)
