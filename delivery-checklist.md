@@ -5,23 +5,23 @@
 - [X] Working MVP
 - [X] Team Charter
 - [X] Task Board
-- [ ] QA/testing evidence
+- [X] QA/testing evidence
 - [X] Go-live readiness note
-- [ ] Audit trail
-- [ ] Pitch
-- [ ] Final submission files
+- [X] Audit trail
+- [X] Pitch
+- [X] Final submission files
 
  Final Checks
 
 - [X] MVP covers at least 2 ticket categories
-- [ ] Order-status flow tested
-- [ ] Stock-availability flow tested
-- [ ] Known issues documented
-- [ ] Northstar handover requirements documented
-- [ ] Team contributions are traceable
-- [ ] All required files are included
-- [ ] Pitch roles assigned to all 5 team members
-- [ ] Final submission checked before deadline
+- [X] Order-status flow tested
+- [X] Stock-availability flow tested
+- [X] Known issues documented
+- [X] Northstar handover requirements documented
+- [X] Team contributions are traceable
+- [X] All required files are included
+- [X] Pitch roles assigned to all 5 team members
+- [X] Final submission checked before deadline
 
  Team
 
