@@ -6,7 +6,7 @@
 - [X] Team Charter
 - [X] Task Board
 - [ ] QA/testing evidence
-- [X]Go-live readiness note
+- [X] Go-live readiness note
 - [ ] Audit trail
 - [ ] Pitch
 - [ ] Final submission files
