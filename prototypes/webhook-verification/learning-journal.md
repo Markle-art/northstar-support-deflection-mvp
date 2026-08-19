@@ -21,33 +21,30 @@
 - Planned duration:
 - Actual duration:
 
-## Research Log
+### Research Log
 
 #### Research Session 1
 
-- Topic: Webhook verification and validating webhook deliveries
-
-- What I learned: A webhook allows one system to send information to another system when an event happens because webhook endpoints can receive requests from the internet, the receiver system needs a way to determine whether a request is genuine. A secret can be used to generate a signature, which the receiving system can independently verify.
-
+- Topic: Webhook verification
+- What I learned: A webhook allows one system to send information to another system when an event happens. The receiving server should not automatically trust every incoming webhook. A secret can be used by the sender to create a signature for the webhook request. The receiving server can use the same secret to calculate an expected signature and compare it with the received signature. If they match, the request can be considered authentic and processed.
 - Source/resource: GitHub Documentation — Validating webhook deliveries
-
 - Questions that remain:
-  - How exactly is the HMAC-SHA256 signature generated?
-  - How does the receiving server compare the signature securely?
-  - How do I implement this in my chosen programming language?
+  - How exactly does HMAC-SHA256 generate the signature?
+  - How do I implement the verification in JavaScript?
+  - How can I test both valid and invalid webhook requests?
     
 ### Attempts
 
 - Attempt 1:
 - Result:
-
+  
 ### Blockers
 
 - Problem: No technical blocker yet, still in the research stage.
-- What I tried: Read the GitHub documentation on validating webhook deliveries.
-- Result: I now understand the basic purpose of webhook verification, but I still need to understand the implementation details.
-- What I tried next: Continue researching HMAC-SHA256 and signature verification.
-  
+- What I tried: Read documentation about webhook verification and signatures.
+- Result: I understand the basic verification flow but still need to understand the implementation.
+- What I tried next: Research how HMAC-SHA256 verification works in JavaScript.
+
 ### Current Understanding
 
 - 
