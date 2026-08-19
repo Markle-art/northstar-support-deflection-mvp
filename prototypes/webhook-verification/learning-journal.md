@@ -21,15 +21,21 @@
 - Planned duration:
 - Actual duration:
 
-### Research Log
+## Research Log
 
 #### Research Session 1
 
-- Topic:
-- What I learned:
-- Source/resource:
-- Questions that remain:
+- Topic: Webhook verification and validating webhook deliveries
 
+- What I learned: A webhook allows one system to send information to another system when an event happens because webhook endpoints can receive requests from the internet, the receiver system needs a way to determine whether a request is genuine. A secret can be used to generate a signature, which the receiving system can independently verify.
+
+- Source/resource: GitHub Documentation — Validating webhook deliveries
+
+- Questions that remain:
+  - How exactly is the HMAC-SHA256 signature generated?
+  - How does the receiving server compare the signature securely?
+  - How do I implement this in my chosen programming language?
+    
 ### Attempts
 
 - Attempt 1:
@@ -37,11 +43,11 @@
 
 ### Blockers
 
-- Problem:
-- What I tried:
-- Result:
-- What I tried next:
-
+- Problem: No technical blocker yet, still in the research stage.
+- What I tried: Read the GitHub documentation on validating webhook deliveries.
+- Result: I now understand the basic purpose of webhook verification, but I still need to understand the implementation details.
+- What I tried next: Continue researching HMAC-SHA256 and signature verification.
+  
 ### Current Understanding
 
 - 
