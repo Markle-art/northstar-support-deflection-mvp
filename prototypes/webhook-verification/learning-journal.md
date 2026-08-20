@@ -17,9 +17,9 @@
 
 ### Time Box
 
-- Planned start time:
-- Planned duration:
-- Actual duration:
+- Planned start time: 3:00 AM
+- Planned duration: Not strictly time-boxed
+- Actual duration: Approximately 4 hours
 
 ### Research Log
 
@@ -35,22 +35,29 @@
     
 ### Attempts
 
-- Attempt 1:
-- Result:
+### Attempts
+
+- Attempt 1: Ran the webhook verification prototype to generate an HMAC-SHA256 signature.
+- Result: The first run produced an `IndentationError: unexpected indent`. After correcting the indentation in the Python file, I reran the prototype successfully and generated the expected HMAC-SHA256 signature.
+- Attempt 2: Extended the prototype to verify a received webhook signature using HMAC-SHA256 and `hmac.compare_digest()`.
+- Result: The verification test succeeded. The output showed `Webhook signature valid: True`, and the expected and received signatures matched.
   
 ### Blockers
 
-- Problem: No technical blocker yet, still in the research stage.
-- What I tried: Read documentation about webhook verification and signatures.
-- Result: I understand the basic verification flow but still need to understand the implementation.
-- What I tried next: Research how HMAC-SHA256 verification works in JavaScript.
+- Problem: An `IndentationError: unexpected indent` occurred when first running the webhook verification prototype.
+- What I tried: I inspected the `webhook_verification.py` file and identified an indentation problem.
+- Result: I corrected the indentation and reran the script successfully.
+- Evidence: The script generated the expected HMAC-SHA256 signature after the correction.
+- What I learned: Python indentation is syntactically significant, so an incorrect indentation can prevent the program from running even when the underlying verification logic is correct.
+- Next step: Continue testing webhook verification and document the results.
 
 ### Current Understanding
 
-- 
+- I understand that webhook verification uses a shared secret and HMAC-SHA256 to create and verify a signature. I successfully ran the verification prototype after fixing an indentation error and generated the expected signature. I now understand that both the verification logic and correct Python syntax are necessary for the prototype to run successfully.
 
 ### Day 1 Reflection
 
+<<<<<<< HEAD
 - What I understand now:
 - What I still need to learn:
 - Next step:
@@ -91,3 +98,9 @@ Successful. I can now generate an HMAC-SHA256 signature from a secret and payloa
 
 **Next learning goal:**  
 Use the generated signature to determine whether a webhook request is authentic, including testing both valid and invalid signatures.
+- What I understand now: I understand how webhook verification can use a shared secret and HMAC-SHA256 to generate a signature and how `hmac.compare_digest()` can compare the expected signature with the received signature. I also learned how to troubleshoot a Python indentation error and verify the corrected prototype through a successful terminal test.
+
+- What I still need to learn: I still need to understand how webhook verification works with an actual HTTP webhook request, including receiving the payload and signature from another system.
+
+- Next step: Continue from the working HMAC verification prototype toward understanding how the verification logic would be used in a real webhook request.
+(Complete webhook verification prototype and journal)
