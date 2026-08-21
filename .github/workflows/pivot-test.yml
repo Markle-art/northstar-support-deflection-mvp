@@ -1,9 +1,6 @@
 name: Meridian Pivot Test
 
 on:
-  push:
-    paths:
-      - "pivot-event/**"
   workflow_dispatch:
 
 jobs:
