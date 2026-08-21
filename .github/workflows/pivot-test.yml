@@ -20,4 +20,4 @@ jobs:
           python-version: "3.12"
 
       - name: Run Pivot prototype
-        run: python pivot-event/app.py
+        run: python3 pivot-event/app.py
