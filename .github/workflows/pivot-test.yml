@@ -11,15 +11,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-
-      - name: Show Pivot files
-        run: |
-          echo "Pivot Event files:"
-          ls -la pivot-event
+      - name: Show repository contents
+        run: find . -maxdepth 3 -type f
 
       - name: Run Pivot prototype
-        run: python3 pivot-event/app.py
+        run: python3 ./pivot-event/app.py
