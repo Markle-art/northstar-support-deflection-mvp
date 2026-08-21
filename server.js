@@ -1,57 +1,68 @@
-const stockCache = {
-  "Wireless Headphones": 12,
-  "USB-C Cable": 25,
-  "Laptop Stand": 7,
-  "Bluetooth Speaker": 0
-};
+const express = require("express");
+
+const app = express();
+const PORT = 3000;
 
 // Simulated warehouse API
-function warehouseAPI() {
-  return {
-    "Wireless Headphones": 12,
-    "USB-C Cable": 25,
-    "Laptop Stand": 7,
-    "Bluetooth Speaker": 0
-  };
-}
+const warehouseAPI = {
+    stock: {
+        laptop: 12,
+        phone: 25,
+        headphones: 8,
+        keyboard: 15,
+        mouse: 30
+    }
+};
 
-// Day 3: Poll warehouse every 5 minutes
+// Stock cache
+const stockCache = {};
+
+// Poll warehouse API
 function pollWarehouse() {
-  const warehouseStock = warehouseAPI();
+    console.log("Polling warehouse API...");
 
-  Object.assign(stockCache, warehouseStock);
+    for (const product in warehouseAPI.stock) {
+        const quantity = warehouseAPI.stock[product];
 
-  console.log("Stock cache updated:", new Date().toISOString());
-}
+        stockCache[product] = {
+            quantity: quantity,
+            available: quantity > 0,
+            lastUpdated: new Date().toISOString()
+        };
+    }
 
-// Query cached inventory
-function queryStock(product) {
-  const quantity = stockCache[product];
-
-  if (quantity === undefined) {
-    return {
-      product,
-      found: false,
-      inStock: false,
-      quantity: 0
-    };
-  }
-
-  return {
-    product,
-    found: true,
-    inStock: quantity > 0,
-    quantity
-  };
+    console.log("Stock cache updated.");
 }
 
 // Initial poll
 pollWarehouse();
 
-// Repeat every 5 minutes
+// Poll every 5 minutes
 setInterval(pollWarehouse, 5 * 60 * 1000);
 
-module.exports = {
-  queryStock,
-  pollWarehouse
-};
+// Query endpoint
+app.get("/stock/:product", (req, res) => {
+    const product = req.params.product.toLowerCase();
+    const result = stockCache[product];
+
+    if (!result) {
+        return res.status(404).json({
+            found: false,
+            product: product,
+            message: "Product not found."
+        });
+    }
+
+    res.json({
+        found: true,
+        product: product,
+        quantity: result.quantity,
+        available: result.available,
+        lastUpdated: result.lastUpdated
+    });
+});
+
+// Start server
+app.listen(PORT, () => {
+    console.log(`Stock service running on port ${PORT}`);
+});

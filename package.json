@@ -1,0 +1,25 @@
+{
+  "name": "northstar-support-deflection-mvp",
+  "version": "1.0.0",
+  "description": "A 1-week industry simulation project for **Northstar Retail Co.**, focused on reducing repetitive customer support tickets through self-service support.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Markle-art/northstar-support-deflection-mvp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Markle-art/northstar-support-deflection-mvp/issues"
+  },
+  "homepage": "https://github.com/Markle-art/northstar-support-deflection-mvp#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
