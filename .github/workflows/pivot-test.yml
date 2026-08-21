@@ -1,0 +1,21 @@
+name: Meridian Pivot Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-pivot:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Show repository files
+        run: |
+          echo "Current directory:"
+          pwd
+          echo "Files in repository:"
+          ls -la
+          echo "Folders:"
+          find . -maxdepth 2 -type f
