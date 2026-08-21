@@ -1,0 +1,23 @@
+name: Meridian Pivot Test
+
+on:
+  push:
+    paths:
+      - "pivot-event/**"
+  workflow_dispatch:
+
+jobs:
+  test-pivot:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run Pivot prototype
+        run: python pivot-event/app.py
