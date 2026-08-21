@@ -16,5 +16,10 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Check project files
+        run: |
+          echo "Checking Pivot Event files..."
+          ls -la pivot-event
+          
       - name: Run Pivot prototype
         run: python3 pivot-event/app.py
