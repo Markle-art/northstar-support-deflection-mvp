@@ -1,125 +1,52 @@
-const express = require("express");
-const crypto = require("crypto");
+const stockCache = {
+  "Wireless Headphones": 25,
+  "USB-C Cable": 18,
+  "Laptop Stand": 7,
+  "Bluetooth Speaker": 0
+};
 
-const app = express();
-app.use(express.json());
+// FINAL DAY 5 ARCHITECTURE
+// Warehouse pushes inventory updates through a webhook.
+// The previous polling implementation has been removed.
 
-const PORT = 3000;
+function receiveWarehouseWebhook(payload) {
+  if (!payload || !payload.stock) {
+    return {
+      success: false,
+      message: "Invalid webhook payload"
+    };
+  }
 
-// Webhook secret used to verify warehouse messages
-const WEBHOOK_SECRET = "northstar-demo-secret";
+  Object.assign(stockCache, payload.stock);
 
-// Stock cache
-const stockCache = {};
-
-// =====================================================
-// DAY 4 PIVOT
-// Polling has been removed.
-// Stock updates now arrive through a webhook.
-// =====================================================
-
-// Verify webhook signature
-function verifyWebhookSignature(payload, signature) {
-    const expectedSignature = crypto
-        .createHmac("sha256", WEBHOOK_SECRET)
-        .update(payload)
-        .digest("hex");
-
-    return crypto.timingSafeEqual(
-        Buffer.from(signature),
-        Buffer.from(expectedSignature)
-    );
+  return {
+    success: true,
+    message: "Stock cache updated",
+    updatedAt: new Date().toISOString()
+  };
 }
 
+function queryStock(product) {
+  const quantity = stockCache[product];
 
-// Webhook endpoint
-app.post("/webhook/stock", (req, res) => {
-    const signature = req.headers["x-webhook-signature"];
-
-    if (!signature) {
-        return res.status(401).json({
-            error: "Missing webhook signature"
-        });
-    }
-
-    const payload = JSON.stringify(req.body);
-
-    let validSignature = false;
-
-    try {
-        validSignature = verifyWebhookSignature(payload, signature);
-    } catch (error) {
-        validSignature = false;
-    }
-
-    if (!validSignature) {
-        return res.status(401).json({
-            error: "Invalid webhook signature"
-        });
-    }
-
-    const { product, quantity } = req.body;
-
-    if (!product || quantity === undefined) {
-        return res.status(400).json({
-            error: "Product and quantity are required"
-        });
-    }
-
-    const productName = product.toLowerCase();
-
-    stockCache[productName] = {
-        quantity: quantity,
-        available: quantity > 0,
-        lastUpdated: new Date().toISOString()
+  if (quantity === undefined) {
+    return {
+      product,
+      found: false,
+      inStock: false,
+      quantity: 0
     };
+  }
 
-    console.log(`Webhook update received: ${productName} = ${quantity}`);
+  return {
+    product,
+    found: true,
+    inStock: quantity > 0,
+    quantity
+  };
+}
 
-    res.json({
-        success: true,
-        product: productName,
-        quantity: quantity,
-        available: quantity > 0
-    });
-});
-
-
-// Stock query endpoint
-app.get("/stock/:product", (req, res) => {
-    const product = req.params.product.toLowerCase();
-
-    const result = stockCache[product];
-
-    if (!result) {
-        return res.status(404).json({
-            found: false,
-            product: product,
-            message: "Product not found in stock cache."
-        });
-    }
-
-    res.json({
-        found: true,
-        product: product,
-        quantity: result.quantity,
-        available: result.available,
-        lastUpdated: result.lastUpdated
-    });
-});
-
-
-// Health check
-app.get("/", (req, res) => {
-    res.json({
-        service: "Northstar Inventory Sync",
-        status: "running",
-        model: "webhook push"
-    });
-});
-
-
-// Start server
-app.listen(PORT, () => {
-    console.log(`Stock service running on port ${PORT}`);
-});
+module.exports = {
+  receiveWarehouseWebhook,
+  queryStock
+};
