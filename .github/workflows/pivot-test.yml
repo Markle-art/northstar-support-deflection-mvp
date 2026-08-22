@@ -11,8 +11,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Show repository contents
+      - name: Show current directory
+        run: pwd
+
+      - name: Show repository files
         run: find . -maxdepth 3 -type f
 
       - name: Run Pivot prototype
-        run: python3 pivot-event/app.py
+        run: python3 ./pivot-event/app.py
