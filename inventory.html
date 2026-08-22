@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Northstar Inventory Sync</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .card {
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 12px 18px;
+      margin: 5px;
+      cursor: pointer;
+    }
+
+    #result {
+      margin-top: 20px;
+      padding: 15px;
+      background: #f3f3f3;
+      border-radius: 8px;
+    }
+
+    .pending {
+      color: #b26a00;
+    }
+
+    .success {
+      color: green;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Northstar Retail Co.</h1>
+  <p>Live Inventory Sync Prototype</p>
+
+  <div class="card">
+    <h2>Inventory Query</h2>
+
+    <select id="product">
+      <option>Wireless Headphones</option>
+      <option>USB-C Cable</option>
+      <option>Laptop Stand</option>
+      <option>Bluetooth Speaker</option>
+    </select>
+
+    <button onclick="queryStock()">Check Stock</button>
+
+    <div id="result">Select a product and check its stock.</div>
+  </div>
+
+  <div class="card">
+    <h2>Day 4 Webhook Simulation</h2>
+
+    <p id="status">Waiting for warehouse update.</p>
+
+    <button onclick="receiveWebhook()">
+      Receive Warehouse Webhook
+    </button>
+  </div>
+
+  <script>
+    const stockCache = {
+      "Wireless Headphones": 25,
+      "USB-C Cable": 18,
+      "Laptop Stand": 7,
+      "Bluetooth Speaker": 0
+    };
+
+    function queryStock() {
+      const product = document.getElementById("product").value;
+      const quantity = stockCache[product];
+
+      document.getElementById("result").innerHTML =
+        "<strong>" + product + "</strong><br>" +
+        "Quantity: " + quantity + "<br>" +
+        "Status: " + (quantity > 0 ? "In Stock" : "Out of Stock");
+    }
+
+    function receiveWebhook() {
+      const status = document.getElementById("status");
+
+      status.className = "pending";
+      status.textContent = "Receiving warehouse update...";
+
+      setTimeout(() => {
+        stockCache["Wireless Headphones"] = 30;
+
+        status.className = "success";
+        status.textContent =
+          "Webhook received successfully. Inventory cache updated to 30 units.";
+
+        queryStock();
+      }, 1000);
+    }
+  </script>
+
+</body>
+</html>
