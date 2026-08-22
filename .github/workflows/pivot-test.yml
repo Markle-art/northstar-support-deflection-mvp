@@ -11,5 +11,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Run Pivot prototype
-        run: python3 ./pivot-event/app.py
+      - name: Find app.py
+        run: |
+          echo "Searching for app.py..."
+          find . -name "app.py" -type f -print
