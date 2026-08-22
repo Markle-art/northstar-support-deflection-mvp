@@ -3,6 +3,7 @@
 ## The Meridian Pivot — Sprint 2
 
 **Learner:** Technical Lead MARK KAMAMIA
+
 **Unfamiliar Tool:** Webhook Verification  
 **Client:** Northstar Retail Co.  
 **Assignment:** Assignment 1 — Solo Recon
