@@ -15,4 +15,4 @@ jobs:
         run: find . -maxdepth 3 -type f
 
       - name: Run Pivot prototype
-        run: python3 ./pivot-event/app.py
+        run: python3 pivot-event/app.py
